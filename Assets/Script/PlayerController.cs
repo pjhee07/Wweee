@@ -23,4 +23,15 @@ public class PlayerController : MonoBehaviour
             transform.position = transform.position + Vector3.left;// new Vector3(1, 0, 0);
         }
     }
+    public void RightButtonDown()
+
+    {
+        transform.position = transform.position + Vector3.right;
+
+    }
+
+    public void LeftButtonDown()
+    {
+        transform.position = transform.position + Vector3.left;
+    }
 }

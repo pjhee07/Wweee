@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    // Start is called before the first frame update
+    UImaneger uiManager;
     void Start()
     {
-        
+        uiManager = FindObjectOfType<UImaneger>();
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class Arrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        FindObjectOfType<UImaneger>().DecrementHP();
         Destroy(gameObject);
     }
 }

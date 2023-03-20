@@ -6,7 +6,8 @@ public class ArrowGenerator : MonoBehaviour
 {
     
     public GameObject ArrowPrefab;
-    public float delaytime = 0.5f;
+    public float delaytime = 0.1f;
+    float span = 0f;
 
     void Start()
     {
@@ -18,9 +19,13 @@ public class ArrowGenerator : MonoBehaviour
 
     void Update()
     {
-        Vector3 position = Vector3.zero;
+        span += Time.deltaTime;
 
-        position = new Vector3(Random.Range(-9f, 9f), 6, 0);
+        if (span > delaytime)
+        {
+        Vector3 position = new Vector3(Random.Range(-9f, 9f), 6, 0);
         Instantiate(ArrowPrefab, position, transform.rotation);
+        span = 0;
+        }
     }
 }
