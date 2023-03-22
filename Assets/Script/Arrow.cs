@@ -13,7 +13,7 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, -0.1f, 0);
+        transform.position += new Vector3(0, -0.05f, 0);
 
         if(transform.position.y < -6f)
         {
@@ -23,6 +23,7 @@ public class Arrow : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FindObjectOfType<UImaneger>().DecrementHP();
+
         Destroy(gameObject);
     }
 }
